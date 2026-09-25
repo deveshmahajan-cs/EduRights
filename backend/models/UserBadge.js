@@ -25,9 +25,17 @@ const userBadgeSchema = new mongoose.Schema(
   }
 );
 
+userBadgeSchema.index(
+  {
+    userId: 1,
+    badgeId: 1,
+  },
+  {
+    unique: true,
+  }
+);
 
 module.exports = mongoose.model(
   "UserBadge",
   userBadgeSchema
 );
-

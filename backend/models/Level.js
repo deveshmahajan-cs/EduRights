@@ -55,6 +55,14 @@ const levelSchema = new mongoose.Schema(
   }
 );
 
+levelSchema.index(
+  {
+    moduleId: 1,
+    levelNumber: 1,
+  },
+  {
+    unique: true,
+  }
+);
 
 module.exports = mongoose.model("Level", levelSchema);
-
