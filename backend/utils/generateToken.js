@@ -1,0 +1,11 @@
+const jwt = require("jsonwebtoken");
+
+const generateToken = (userId, role) => {
+  return jwt.sign(
+    { id: userId, role },
+    process.env.JWT_SECRET || "fallback_edurights_secret_key",
+    { expiresIn: "7d" }
+  );
+};
+
+module.exports = generateToken;
