@@ -65,4 +65,6 @@ levelSchema.index(
   }
 );
 
+levelSchema.index({ isPublished: 1, order: 1 });
+
 module.exports = mongoose.model("Level", levelSchema);
