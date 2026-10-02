@@ -17,6 +17,7 @@ const errorHandler = (err, req, res, next) => {
   }
 
   // Handle Mongoose CastError (invalid ObjectId)
+  // Return 400 for invalid resource identifier
   if (err.name === "CastError") {
     return res.status(400).json({
       message: `Invalid resource identifier: ${err.value}`,
