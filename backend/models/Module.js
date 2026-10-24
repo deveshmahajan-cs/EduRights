@@ -58,4 +58,6 @@ const moduleSchema = new mongoose.Schema(
   }
 );
 
+moduleSchema.index({ isPublished: 1, order: 1 });
+
 module.exports = mongoose.model("Module", moduleSchema);
